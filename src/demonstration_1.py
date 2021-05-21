@@ -48,4 +48,25 @@ def flood_fill(image, sr, sc, new_color):
     List[List[int]]
     """
     # Your code here
+    #a tuple of row and colom is the vertex!!
+    #we have few graphs but is not a list graph or a metrix graph...
+    #travers
+    queue = []
+    visited = set()
+    queue.append((sr, sc))
 
+    while len(queue) > 0:
+        #pop the item of the queue:
+        current_vertex = queue.pop(0)
+
+        #check if vertex was visited
+        if current_vertex in visited:
+            continue
+
+        #do something to the vertex = update the pixel to the new color:
+                #row                column
+        image[current_vertex[0], current_vertex[1]] = new_color
+
+        #queue up the neightbors:
+        #look up and then left and right
+        
